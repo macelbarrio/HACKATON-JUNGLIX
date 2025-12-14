@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Gestión de Salas - Junglix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body-sobre-nosotros admin-mode">
+
+<header class="main-header">
+  <div class="header-left">
+    <span class="logo">JUNGLIX</span>
+    <nav class="main-nav">
+      <a class="nav-link" href="index.html">← Tornar al menú</a>
+    </nav>
+  </div>
+  <div class="login-link" id="admin-user-display" style="cursor: default;">Admin</div>
+</header>
+
+<div class="admin-container">
+    <div class="admin-header">
+        <h1>Sales</h1>
+        <button class="btn-create" onclick="openCreateModal()">+ Nova Sala</button>
+    </div>
+
+    <div id="rooms-list" class="rooms-grid">
+        <p>Carregant sales...</p>
+    </div>
+</div>
+
+<div id="create-room-modal" class="modal hidden">
+  <div class="modal-content create-room-content">
+    <span class="close" onclick="closeCreateModal()">×</span>
+    
+    <h2>✨ Crear Nova Sala</h2>
+    <p class="modal-subtitle">Defineix els detalls del nou espai de joc</p>
+
+    <div class="form-group">
+      <label for="new-room-name">Nom de la Sala <span class="required">*</span></label>
+      <input type="text" id="new-room-name" placeholder="Ex: Chill Zone, Competició...">
+    </div>
+
+    <div class="form-group">
+      <label for="new-room-desc">Descripció (Opcional)</label>
+      <textarea id="new-room-desc" rows="3" placeholder="De què va aquesta sala?"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="new-room-capacity">Capacitat Màxima</label>
+      <div class="range-container">
+        <input type="number" id="new-room-capacity" min="2" max="50" value="10">
+        <span class="note">jugadors</span>
+      </div>
+    </div>
+
+    <button class="btn-save" onclick="submitCreateRoom()">Crear Sala</button>
+  </div>
+</div>
+
+<script src="salas.js"></script> 
+</body>
+</html>
